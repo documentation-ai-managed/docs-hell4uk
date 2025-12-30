@@ -1,0 +1,115 @@
+---
+title: Getting Started with hell4uk
+description: Set up your account and create your first documentation space in just a few minutes to begin organizing your projects.
+---
+
+## Prerequisites
+
+Before you begin, ensure you have:
+
+<Callout kind="info">
+- A modern web browser (Chrome, Firefox, or Safari)
+- An email address for account verification
+- Optional: Node.js `{^18.0.0}` if using the CLI tools
+</Callout>
+
+## Create Your Account
+
+Sign up for hell4uk in under a minute. Follow these steps to register and log in.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="globe">
+    Navigate to `https://dashboard.example.com` and click **Sign Up**.
+  </Step>
+  <Step title="Enter Details" icon="user-plus">
+    Provide your email, create a strong password, and complete the CAPTCHA.
+  </Step>
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification link from hell4uk and click it.
+  </Step>
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard, enter your credentials, and access your workspace.
+  </Step>
+</Steps>
+
+## Create Your First Documentation Space
+
+Once logged in, set up a space for your project docs.
+
+<Steps>
+  <Step title="Click New Space" icon="plus">
+    From the dashboard, select **New Documentation Space**.
+  </Step>
+  <Step title="Configure Space" icon="settings">
+    Enter a name like `MyProjectDocs`, select visibility (`public` or `private`), and add a description.
+  </Step>
+  <Step title="Save and Enter" icon="save">
+    Click **Create**. You'll land in your new space's editor.
+  </Step>
+</Steps>
+
+## Upload Initial Project Files
+
+Add your project files to the space using these methods.
+
+<Tabs>
+  <Tab title="Drag & Drop" icon="upload">
+    Open your space, drag files from your desktop into the file panel.
+
+    Supported formats: MDX, MD, images (`<100MB`), JSON configs.
+  </Tab>
+  <Tab title="API Upload" icon="api">
+    Use the REST API to upload programmatically.
+
+    <CodeGroup tabs="cURL,JavaScript">
+      ```bash
+      curl -X POST https://api.example.com/v1/spaces/{SPACE_ID}/files \
+        -H "Authorization: Bearer YOUR_API_KEY" \
+        -F "file=@/path/to/project.mdx"
+      ```
+      ```javascript
+      const formData = new FormData();
+      formData.append('file', fileInput.files[0]);
+
+      fetch('https://api.example.com/v1/spaces/{SPACE_ID}/files', {
+        method: 'POST',
+        headers: { 'Authorization': 'Bearer YOUR_API_KEY' },
+        body: formData
+      });
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+<Callout kind="tip">
+  Start with a `README.mdx` file to outline your project structure.
+</Callout>
+
+## Basic Interface Tour
+
+Explore the main features of hell4uk's interface.
+
+<Columns cols={3}>
+  <Card title="Editor" icon="edit-3" href="#editor">
+    Real-time MDX editor with live preview and syntax highlighting.
+  </Card>
+  <Card title="File Tree" icon="git-branch" href="#files">
+    Hierarchical view of your docs, spaces, and assets.
+  </Card>
+  <Card title="Publish" icon="globe" href="#publish">
+    One-click publishing to custom domains or shareable links.
+  </Card>
+</Columns>
+
+## Next Steps
+
+<Columns cols={2}>
+  <Card title="Learn Authentication" icon="shield" href="/authentication">
+    Secure your spaces with API keys and webhooks.
+  </Card>
+  <Card title="Advanced Guides" icon="book-open" href="/guides">
+    Dive into collaboration and custom themes.
+  </Card>
+</Columns>
+
+Congratulations! You've set up hell4uk and created your first space. Organize more projects by repeating these steps or explore the full docs.

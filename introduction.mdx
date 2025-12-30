@@ -1,0 +1,107 @@
+---
+title: Welcome to hell4uk
+description: Get an overview of hell4uk, a documentation management platform designed to help you organize and maintain all your project documentation efficiently.
+---
+
+## Overview
+
+hell4uk provides a centralized platform for managing your project documentation. You create organized spaces for different projects, write content in MDX format, and collaborate with your team seamlessly. This eliminates scattered docs across tools like Google Docs, Notion, or GitHub wikis, giving you version control, search, and publishing in one place.
+
+With hell4uk, you maintain living documentation that evolves with your codebase. Focus on content while the platform handles rendering, search indexing, and deployment.
+
+## Key Features
+
+hell4uk stands out with powerful tools tailored for technical teams.
+
+<Columns cols={3}>
+  <Card title="Organized Spaces" icon="folder" href="/spaces">
+    Create unlimited documentation spaces for projects, teams, or products. Each space supports nested pages, custom navigation, and permissions.
+  </Card>
+  <Card title="MDX Support" icon="file-text" href="/mdx">
+    Write rich docs using MDX with components like Cards, Steps, and Tabs. Embed code, diagrams, and interactive elements effortlessly.
+  </Card>
+  <Card title="Collaboration" icon="users" href="/collaboration">
+    Real-time editing, version history, and role-based access keep your team aligned without merge conflicts.
+  </Card>
+</Columns>
+
+<Callout kind="success">
+  All features integrate with Git for backups and CI/CD workflows.
+</Callout>
+
+## Quick Start
+
+Get up and running in minutes.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at `https://app.hell4uk.com/register` with your email or GitHub account.
+  </Step>
+  <Step title="New Space" icon="plus">
+    Click "New Space" and name it for your project, like "MyApp Docs".
+  </Step>
+  <Step title="Add First Page" icon="file-plus">
+    Create `introduction.mdx` and start writing. Use the editor's live preview.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Hit "Publish" to generate your custom domain like `docs.myapp.com`.
+  </Step>
+</Steps>
+
+## Quick Navigation
+
+Jump to essential sections.
+
+<Columns cols={2}>
+  <Card title="Quickstart Guide" icon="zap" href="/quickstart">
+    Detailed setup instructions and first project.
+  </Card>
+  <Card title="Authentication" icon="lock" href="/authentication">
+    Secure your spaces with API keys and SSO.
+  </Card>
+  <Card title="MDX Components" icon="code" href="/components">
+    Full reference for Callout, Steps, and more.
+  </Card>
+  <Card title="Changelog" icon="git-branch" href="/changelog">
+    Track updates and new features.
+  </Card>
+</Columns>
+
+## Brand Guidelines
+
+Follow these to match hell4uk's visual identity.
+
+<Expandable title="Primary Colors" default-open="true">
+  Use the brand color `<span style="color: #3B82F6;">#3B82F6</span>` for accents.
+
+  ```css
+  :root {
+    --brand-primary: #3B82F6;
+    --brand-secondary: #1E40AF;
+    --neutral-bg: #FFFFFF;
+  }
+  ```
+
+  Pair with neutrals for readability.
+</Expandable>
+
+<Callout kind="tip">
+  Embed hell4uk docs in your app with this snippet:
+
+  <CodeGroup tabs="JavaScript,React">
+  ```javascript
+  import { DocsEmbed } from '@hell4uk/embed';
+
+  <DocsEmbed spaceId="your-space-id" apiKey="YOUR_API_KEY" />
+  ```
+  ```jsx
+  import DocsEmbed from '@hell4uk/embed-react';
+
+  function App() {
+    return <DocsEmbed spaceId="{spaceId}" />;
+  }
+  ```
+  </CodeGroup>
+</Callout>
+
+Ready to build? Head to [Quickstart](/quickstart) for hands-on setup.

@@ -1,0 +1,147 @@
+---
+title: Core Features of hell4uk
+description: Explore the essential capabilities of hell4uk for managing and collaborating on project documentation.
+---
+
+## Overview
+
+hell4uk provides powerful tools to streamline your documentation workflow. You organize content into intuitive folder structures, track changes with built-in version control, collaborate seamlessly with your team, and find information quickly through advanced search. These features ensure your project docs stay current and accessible.
+
+<Callout kind="info">
+  Start by creating your first folder to experience organization firsthand.
+</Callout>
+
+## Key Features
+
+<Columns cols={2}>
+  <Card title="Document Organization" icon="folder" href="#document-organization">
+    Structure your docs with nested folders and intuitive navigation.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#version-control">
+    Track every change with Git integration for reliable history.
+  </Card>
+  <Card title="Collaboration Tools" icon="users" href="#collaboration-tools">
+    Invite team members and review changes in real-time.
+  </Card>
+  <Card title="Search and Indexing" icon="search" href="#search-indexing">
+    Full-text search across all documents with instant results.
+  </Card>
+</Columns>
+
+## Document Organization and Folders
+
+You create hierarchical folder structures to keep related documents together. Folders support unlimited nesting, making large projects easy to navigate.
+
+<Steps>
+  <Step title="Create a Folder" icon="plus">
+    Navigate to your workspace root and select "New Folder".
+  </Step>
+  <Step title="Add Documents" icon="file-text">
+    Drag files into the folder or use the upload button.
+  </Step>
+  <Step title="Nest Folders" icon="folder-plus">
+    Right-click a folder and select "New Subfolder".
+  </Step>
+</Steps>
+
+Example folder structure:
+
+```yaml
+workspace/
+├── api/
+│   ├── endpoints.mdx
+│   └── auth.mdx
+├── guides/
+│   └── quickstart.mdx
+└── README.mdx
+```
+
+## Version Control for Docs
+
+hell4uk integrates with Git, so you commit, branch, and merge changes like code. Every document revision is tracked automatically.
+
+<CodeGroup tabs="Bash,CLI">
+  ```bash
+  # Initialize Git in your workspace
+  git init
+  git add .
+  git commit -m "Initial docs commit"
+  git push origin main
+  ```
+  ```bash
+  # From hell4uk CLI
+  hell4uk git init
+  hell4uk git commit -m "Update features"
+  hell4uk git push
+  ```
+</CodeGroup>
+
+<Callout kind="tip">
+  Enable auto-commits in settings for hands-free version history.
+</Callout>
+
+## Collaboration Tools for Teams
+
+Invite teammates with role-based permissions. You review changes via pull requests and discuss in inline comments.
+
+<Tabs>
+  <Tab title="Invite Members" icon="user-plus">
+    Go to Team Settings > Members > Add Email.
+  </Tab>
+  <Tab title="Review Changes" icon="eye">
+    Open a document and select "View History" for diffs.
+  </Tab>
+  <Tab title="Share Links" icon="share-2">
+    Generate public or private links for external reviewers.
+  </Tab>
+</Tabs>
+
+## Search and Indexing
+
+hell4uk indexes all content for fast, full-text search. Query across folders, metadata, and even code blocks.
+
+<Expandable title="Advanced Search Syntax" default-open="false">
+
+Use operators like `AND`, `OR`, and quotes:
+
+```
+"project setup" AND api
+folder:guides quickstart
+```
+
+</Expandable>
+
+Example API search:
+
+<Request tabs="JavaScript,cURL">
+  ```javascript
+  const response = await fetch('https://api.example.com/search?q=authentication', {
+    headers: { Authorization: `Bearer ${YOUR_API_KEY}` }
+  });
+  ```
+  ```bash
+  curl -H "Authorization: Bearer YOUR_API_KEY" \
+       "https://api.example.com/search?q=authentication"
+  ```
+</Request>
+
+<Response>
+  ```json
+  {
+    "results": [
+      {
+        "id": "doc-123",
+        "title": "Authentication Guide",
+        "snippet": "Use Bearer tokens for API access..."
+      }
+    ],
+    "total": 5
+  }
+  ```
+</Response>
+
+<ParamField path="q" param-type="string" required="true">
+  Search query string.
+</ParamField>
+
+These features make hell4uk your go-to for scalable documentation. Link folders to your repo for continuous sync.

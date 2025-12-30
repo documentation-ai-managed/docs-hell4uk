@@ -1,0 +1,125 @@
+---
+title: Changelog
+description: Track the latest updates, improvements, and bug fixes in hell4uk to stay informed about new features.
+---
+
+## Recent Updates
+
+Stay current with hell4uk's evolution. You receive automatic notifications for major releases through your dashboard at `https://dashboard.example.com`.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Added real-time collaboration for teams, enabling simultaneous editing of documentation pages.
+- Introduced version pinning, so you lock specific doc versions for stable deployments.
+- Enhanced search with semantic matching for faster topic discovery.
+
+## Bug Fixes
+
+- Resolved intermittent save failures during high-concurrency edits.
+- Fixed rendering issues with nested `{code blocks}` in MDX previews.
+- Corrected export errors for large documentation sites exceeding `>50MB`.
+
+## Improvements
+
+- Optimized page load times by `>30%` through lazy-loading components.
+- Updated UI with new brand color `#3B82F6` for better accessibility.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Integrated webhook support for custom workflows at `https://your-webhook-url.com/webhook`.
+- Added changelog auto-generation from git commits.
+
+## Improvements
+
+- Streamlined navigation with collapsible sidebars.
+- Improved mobile responsiveness for on-the-go editing.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## Initial Release
+
+- Core documentation management with MDX support.
+- User authentication via `https://auth.example.com`.
+- Basic dashboard at `https://dashboard.example.com`.
+
+## Breaking Changes
+
+- Migrated config format from YAML to JSON.
+
+</Update>
+
+## Upgrade Guide
+
+Follow these steps to upgrade hell4uk smoothly.
+
+<Steps>
+  <Step title="Check Compatibility" icon="check-circle">
+
+    Review your current setup against the [release notes](#recent-updates).
+
+  </Step>
+  <Step title="Backup Data" icon="database">
+
+    Export your site:
+
+````bash
+hell4uk export --site my-docs --output backup.zip
+````
+
+  </Step>
+  <Step title="Install Latest" icon="download">
+
+    <Tabs>
+      <Tab title="npm" icon="package">
+````bash
+npm install hell4uk@latest
+````
+      </Tab>
+      <Tab title="yarn" icon="package">
+````bash
+yarn add hell4uk@latest
+````
+      </Tab>
+    </Tabs>
+
+  </Step>
+  <Step title="Run Migration" icon="settings">
+
+    ```bash
+    hell4uk migrate --from v1.1.0 --to v1.2.0
+    ```
+
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Test upgrades in a staging environment first. Use `YOUR_API_KEY` from `https://dashboard.example.com/settings`.
+</Callout>
+
+## Upcoming Features
+
+Preview what's next for hell4uk.
+
+<Columns cols={2}>
+  <Card title="AI Assistant" icon="zap" href="/introduction">
+    Auto-generate docs from code comments.
+  </Card>
+  <Card title="Advanced Analytics" icon="bar-chart" href="/quickstart">
+    Track doc views and engagement metrics.
+  </Card>
+  <Card title="Multi-Language Support" icon="globe" href="/authentication">
+    Translate docs automatically.
+  </Card>
+</Columns>
+
+<Expandable title="Stay Informed" default-open="true">
+  Subscribe to updates via email or RSS at `https://docs.example.com/rss`. Join the community on GitHub for early access.
+</Expandable>
